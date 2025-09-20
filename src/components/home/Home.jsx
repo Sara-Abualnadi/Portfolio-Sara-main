@@ -17,10 +17,11 @@ const Home = () => {
       { threshold: 0.3 }
     );
 
-    if (modelRef.current) observer.observe(modelRef.current);
+    const model = modelRef.current; // copy ref to local variable
+    if (model) observer.observe(model);
 
     return () => {
-      if (modelRef.current) observer.unobserve(modelRef.current);
+      if (model) observer.unobserve(model);
     };
   }, []);
 
@@ -61,5 +62,6 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
