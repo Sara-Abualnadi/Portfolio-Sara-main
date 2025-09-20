@@ -1,0 +1,99 @@
+/* Skills Container */
+.skills__container {
+  display: grid; /* enable grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+  gap: 2rem; /* space between boxes */
+  justify-content: center; /* center the grid horizontally */
+  align-items: start; /* align items at the top */
+  margin-top: 2rem;
+}
+
+/* Each Skills Box */
+.skills__content {
+  background: rgba(255, 255, 255, 0.426);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem 4rem;
+  border-radius: 1.25rem;
+  text-align: center; /* center the content inside the box */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills__content:hover {
+  transform: translateY(-5px); /* subtle lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Title */
+.skills__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1-5);
+}
+
+/* Box that wraps groups inside content */
+.skills__box {
+  display: flex;
+  justify-content: center;
+  column-gap: 2.5rem;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  margin-top: 1rem;
+}
+
+/* Each group of skills */
+.skills__group {
+  display: grid;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+
+/* Individual skill row */
+.skills__data {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+/* Skill icon */
+.skills .bx-badge-check {
+  font-size: 1rem;
+  color: var(--title-color);
+}
+
+/* Skill name and level */
+.skills__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  line-height: 18px;
+}
+
+.skills__level {
+  font-size: var(--tiny-font-size);
+  color: var(--text-color-light);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 992px) {
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on medium screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills__container {
+    grid-template-columns: 1fr; /* 1 box per row on small screens */
+  }
+
+  .skills__content {
+    padding: 1.5rem;
+  }
+
+  .skills__box {
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .skills__name {
+    font-size: var(--small-font-size);
+  }
+}
